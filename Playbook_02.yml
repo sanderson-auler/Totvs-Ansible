@@ -1,0 +1,9 @@
+---
+- hosts: grupo_sanderson
+  remote_user: sanderson
+  become: yes
+  tasks:
+  - name: Instala o servico NTP (sincronizacao de tempo)
+    apt: name=ntp state=present
+  - name: Garante que o NTP esta rodando
+    service: name=ntp state=started enabled=yes
