@@ -1,0 +1,10 @@
+---
+- hosts: grupo_sanderson
+  remote_user: sanderson
+  become: yes
+  tasks:
+  - name: Tarefa que realiza download do arquivo atual do aplicativo de acesso ao ERP Totvs (Client)
+    unarchive: 
+      src: https://arte.engpro.totvs.com.br/public/tec/smartclient_ws/smartclient-linux-x64.tar.gz
+      dest: /home/sanderson/SmartClient
+      remote_src: yes
